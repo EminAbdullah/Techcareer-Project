@@ -1,0 +1,63 @@
+﻿@model List<GameShop.Models.Game>
+
+@{
+	ViewBag.Title = "Game List";
+}
+
+<h1>Game List</h1>
+
+<div class="row">
+	<div class="col-md-2">
+		<ul class="list-group">
+			<li class="list-group-item">
+				<a asp-controller="Game" asp-action="List" asp-route-type="Action" class="nav-link">Action</a>
+			</li>
+			<li class="list-group-item">
+				<a asp-controller="Game" asp-action="List" asp-route-type="Adventure" class="nav-link">Adventure</a>
+			</li>
+			<li class="list-group-item">
+				<a asp-controller="Game" asp-action="List" asp-route-type="Puzzle" class="nav-link">Puzzle</a>
+			</li>
+			<li class="list-group-item">
+				<a asp-controller="Game" asp-action="List" asp-route-type="Roguelike" class="nav-link">RogueLike</a>
+			</li>
+			<li class="list-group-item"></li>
+		</ul>
+	</div>
+	<div class="col-md-10">
+		<table class="table table-info table-striped">
+			<tr>
+				<th>
+					Name
+				</th>
+				<th>
+					Developer
+				</th>
+				<th>
+					Price
+				</th>
+				<th></th>
+			</tr>
+
+			@foreach (var item in Model)
+			{
+				<tr>
+					<td>
+
+						@Html.DisplayFor(modelItem => item.DisplayName)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Developer)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Price)
+					</td>
+					<td>
+						<a asp-controller="Game" asp-action="Details" asp-route-id="@item.Id" asp-route-slug="@item.Slug">Details</a>
+					</td>
+				</tr>
+			}
+
+		</table>
+	</div>
+</div>

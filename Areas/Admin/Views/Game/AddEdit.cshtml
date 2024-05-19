@@ -1,0 +1,44 @@
+﻿@model GameShop.Models.Game
+@{
+	ViewBag.Title = "Admin Game Add/Edit";
+}
+
+
+<h1>Admin Game Add/Edit</h1>
+ <div asp-validation-summary="All"></div> 
+<form asp-controller="Game" asp-action="Add" method="post" enctype="multipart/form-data">
+	<div class="form-floating mb-3 ">
+		<input asp-for="Name" class="form-control" id="floatingName" placeholder="Name">
+		<label asp-for="Name" for="floatingName">Name</label>
+	</div>
+	<div class="form-floating mb-3 ">
+		<input asp-for="Developer" class="form-control" id="floatingDeveloper" placeholder="Developer">
+		<label asp-for="Developer" for="floatingDeveloper">Developer</label>
+	</div>
+	<div class="form-floating mb-3 ">
+		<input asp-for="Publisher" class="form-control" id="floatingPublisher" placeholder="Publisher">
+		<label asp-for="Publisher" for="floatingPublisher">Publisher</label>
+	</div>
+	<div class="form-floating mb-3 ">
+		<input asp-for="ReleaseDate" class="form-control" id="floatingReleaseDate" placeholder="Release Date">
+		<label asp-for="ReleaseDate" for="floatingReleaseDate">Release Date</label>
+	</div>
+	<div class="form-floating mb-3 ">
+		<input asp-for="Type" class="form-control" id="floatingType" placeholder="Type">
+		<label asp-for="Type" for="floatingType">Type</label>
+	</div>
+	<div class="form-floating mb-3 ">
+		<input asp-for="Price" class="form-control" id="floatingPrice" placeholder="Price">
+		<label asp-for="Price" for="floatingPrice">Price</label>
+	</div>
+	 <div class="form-floating mb-3">
+		 <input type="file" name="imageFile" class="form-control" id="" placeholder="Image File Name"> 
+	 	<label for="floatingImageFileName">Image File</label>
+		<input asp-for="ImageFileName" class="form-control" type="hidden" />
+		 <span asp-validation-for="ImageFileName" class="text-danger"></span> 
+	</div> 
+	
+	<td>
+		<button type="submit" class="btn btn-primary">Kaydet</button>
+	</td>
+</form>

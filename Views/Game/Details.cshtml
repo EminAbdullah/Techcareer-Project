@@ -1,0 +1,42 @@
+﻿@model GameShop.Models.Game
+
+@{
+	ViewBag.Title = "Game Details";
+}
+
+<div class="text-center">
+    <h1 class="display-4 mb-4" style="text-decoration: underline;">Game Details</h1>
+</div>
+
+<div class="row">
+    <div class="col"> </div>
+    <div class="col">
+        <div class="card" style="width:36rem;">
+            <img src="@Model.ImageFileName" class="card-img-top" alt="..." >
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <strong>Name:</strong> @Model.Name
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Developer:</strong> @Model.Developer
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Publisher:</strong> @Model.Publisher
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Release Date:</strong> @Model.ReleaseDate
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Type:</strong> @Model.Type
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Price:</strong> @Model.Price.ToString() tl
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="col"> </div>
+</div>
